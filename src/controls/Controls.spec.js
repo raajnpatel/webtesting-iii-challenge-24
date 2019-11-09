@@ -13,7 +13,7 @@ describe('<Controls />', () => {
         const closeSpy = jest.fn();
         const lockSpy = jest.fn();
 
-       const { getByText } = render (<Controls closed={false} locked={false} toggleClosed={closeSpy} toggleLocked={lockSpy}/>)
+       const { getByText } = render (<Controls closed={false} locked={false} toggleClosed={closeSpy} toggleLocked={lockSpy}/>);
        const closeBtn = getByText(/close gate/i);
        const lockBtn = getByText(/lock gate/i);
 
@@ -33,7 +33,7 @@ describe('<Controls />', () => {
         const closeSpy = jest.fn();
         const lockSpy = jest.fn();
 
-        const { getByText } = render (<Controls closed={true} locked={false} toggleClosed={closeSpy} toggleLocked={lockSpy}/>)
+        const { getByText } = render (<Controls closed={true} locked={false} toggleClosed={closeSpy} toggleLocked={lockSpy}/>);
         const closeBtn = getByText(/open gate/i);
         const lockBtn = getByText(/lock gate/i);
 
@@ -53,7 +53,7 @@ describe('<Controls />', () => {
         const closeSpy = jest.fn();
         const lockSpy = jest.fn();
 
-        const { getByText } = render (<Controls closed={true} locked={true} toggleClosed={closeSpy} toggleLocked={lockSpy}/>)
+        const { getByText } = render (<Controls closed={true} locked={true} toggleClosed={closeSpy} toggleLocked={lockSpy}/>);
         const closeBtn = getByText(/open gate/i);
         const lockBtn = getByText(/unlock gate/i);
 
