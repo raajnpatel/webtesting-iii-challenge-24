@@ -35,7 +35,7 @@ describe('<Display />', () => {
 
     });
 
-    it('closed and unlocked', () => {
+    it('closed and locked', () => {
         const {getByText} = render(<Display closed={true} locked={true}/>);
 
         // check for correct text
