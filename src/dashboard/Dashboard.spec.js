@@ -11,6 +11,7 @@ describe('<Dashboard />', () => {
 });
 
 describe("<Dashboard /> state transitions", () => {
+    // object destructured so it's usable throughout the testing app
     const { getByText } = render(<Dashboard/>);
 
     it('default state: open and unlocked', () => {
