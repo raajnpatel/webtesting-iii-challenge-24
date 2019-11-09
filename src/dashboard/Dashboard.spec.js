@@ -18,8 +18,8 @@ describe("<Dashboard /> state transitions", () => {
         getByText(/^open$/i);
         getByText(/^unlocked$/i);
 
-        const lockBtn = getByText(/^lock gate$/i);
-        const closeBtn = getByText(/^close gate$/i);
+        getByText(/^lock gate$/i);
+        getByText(/^close gate$/i);
     });
 
     it('open and unlocked to close and unlocked', () => {
@@ -46,5 +46,31 @@ describe("<Dashboard /> state transitions", () => {
         // check button text
         getByText(/^unlock gate$/i);
         getByText(/^open gate$/i);
+    });
+
+    it('open and locked to close and unlocked', () => {
+        const lockBtn = getByText(/^unlock gate$/i);
+        fireEvent.click(lockBtn);
+
+        // check display text
+        getByText(/^closed$/i);
+        getByText(/^unlocked$/i);
+
+        // check button text
+        getByText(/^lock gate$/i);
+        getByText(/^open gate$/i);
+    });
+
+    it('open and locked to open and unlocked', () => {
+        const openBtn = getByText(/^open gate$/i);
+        fireEvent.click(openBtn);
+
+        // check display text
+        getByText(/^open$/i);
+        getByText(/^unlocked$/i);
+
+        // check button text
+        getByText(/^lock gate$/i);
+        getByText(/^close gate$/i);
     });
 });
